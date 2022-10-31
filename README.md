@@ -1,6 +1,7 @@
 # ProyectoSharks
 
-https://cdn.mos.cms.futurecdn.net/ZhiCPJJVnexUpJY7oYMeKF.jpg
+![ZhiCPJJVnexUpJY7oYMeKF](https://user-images.githubusercontent.com/114060666/199090896-e12f8be1-db34-49a2-a696-d6f6c68b1273.jpg)
+
 
 
 En primer lugar importamos las librerias necesarias.
