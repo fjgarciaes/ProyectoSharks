@@ -34,6 +34,8 @@ Se realiza el mismo proceso para la columna sex, agrupando todos los valores ent
 
 Para la columna type introduzco los valores boat y boating dentro de boating.
 
+Igualo las columnas casenumber1 y casenunmber2 a date ya que aportan la misma información.
+
 En la columna Age se cambian los valores introduciendo valores numéricos en lugar de strings considerando por ejemplo que la edad media de los teens es 15.5 años y así se procede con el resto.
 
 En la columna activity se buscan valores usando regex y se simplifican a 17 tipos de actividades, dejando aquellos que no quedan claro en other.
