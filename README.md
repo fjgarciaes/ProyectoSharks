@@ -49,5 +49,6 @@ Las conclusiones que observo son las siguientes:
 - De las actividades de las que se tienen datos el mayor numero de ataques se producen pescando o nadando.
 - El mayor numero de ataques los recibe el sexo masculino.
 - La gran mayoria de los ataques no fueron letales.
+
 -Los paises en los que se tienen mas registros de ataques son Estados unidos y Australia.
 - Por último se observa que el mayor numero de ataques registrados son del año 2015.
