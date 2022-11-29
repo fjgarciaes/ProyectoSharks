@@ -2,47 +2,63 @@
 
 ![ZhiCPJJVnexUpJY7oYMeKF](https://user-images.githubusercontent.com/114060666/199090896-e12f8be1-db34-49a2-a696-d6f6c68b1273.jpg)
 
+OBJETIVO:
 
+Limpiar el máximo posible de la base de datos.
 
+Restricciones:
+
+Solo se pueden eliminar las columnas que tengan mas de un 80% de nulos
+
+Debemos finalizar la limpieza con mas de 6000 filas.
+
+EXPLORACIÓN DE LA BASE DE DATOS:
+
+- Importación y lectura del archivo.
+
+- Conversión a dataframe.
+
+- Observación de tipos de variables, duplicados, valores nulos y cantidad de registros.
+
+PRIMEROS PASOS PARA LA LIMPIEZA:
+
+1) Adaptar los nombres de columnas,quitando espacios y convirtiendo todo a minuscula.
+
+2) Eliminación de 2 columnas con mas del 80% de nulos.
 En primer lugar importamos las librerias necesarias.
 
-Cargamos el Dataframe.
+3) Eliminación de filas con muchos valores nulos.
 
-Cambio los nombres de las columnas a minúscula y quito los espacios.
+4) Rellenar el resto de valores nulos con unknown.
 
-Vemos las dimensiones del Df así como la información del mismo.
+PROCESO DE LIMPIEZA:
 
-Vemos los valores nulos que hay en cada columna y sacamos el porcentaje de nulos por columna así como un mapa de calor.
+- La columna casenumber se convierte en el id de los casos.
 
-Elimino las columnas unnamed:22 y unnamed23, el resto de columnas con valores nulos por encima del 80% se mantienen ya que sus datos son relevantes.
+- En la columna name se reemplazan los valores desconocidos por John Doe o Jane Doe en función del sexo.
 
-Basandome en la columna Date elimino las filas en las que sus valores son nulos dejando el DataFrame con 6302 filas y 22 columnas frente a las 25723 filas y 24 columnas del Dataframe original 
+- Para la columna date se cambia el formato para conseguir que queden todos los datos con año/mes/dia 
 
-Reemplazo el resto de valores nulos por unknown
+- Se modifica el nombre de la columna country y se normaliza dejando todo sus valores en mayusculas y sobrescribiendo aquellos datos que lo necesitan.
 
-En la columna name reemplazo los valores male y female por John Doe y Jane Doe para indicar que no se conoce su nombre 
+- En la columna fatal se modifica su nombre y se normalizan los datos.
 
-Convierto la columna caseNumber en el id de los casos
+- En la columna sex se sigue el mimso proceso que se utilizo para la columna fatal
 
-Se limpia la columna date para que todas las fechas queden en formato año/mes/dia
+- En la columna type se normalizan todos los valores
 
-Modifico el nombre de la columna country por country/aprox zone ya que los valores dentro de la misma no son únicamente países, para normalizarla se ponen todos sus valores en mayusculas y se sobreescribe el nombre de aquellos que contenían mas información.
+- Se modifica la columna age para que sus valores sean numericos.
 
-Para la columna fatal(y/n) se cambia su nombre a fatal(y/n) & N/A se normalizan sus datos incluyéndolos todos en Y,N N/A y unknown 
+- En la columna activity se utiliza regex para quedarme unicamente con 17 tipos de actividades
 
-Se realiza el mismo proceso para la columna sex, agrupando todos los valores entre F,M y unknown 
+- Se igualan las columnas que aportan la misma información ya que no se pueden eliminar.
 
-Para la columna type introduzco los valores boat y boatingomg dentro de boating.
+- Se reemplazan los valores desconocidos de la columna year por valores numericos
 
-Igualo las columnas casenumber1 y casenunmber2 a date ya que aportan la misma información.
+- Se cambia el tipo de dato de todas las columnas para reducir el uso de memoria
 
-En la columna Age se cambian los valores introduciendo valores numéricos en lugar de strings.
 
-En la columna activity se buscan valores usando regex y se simplifican a 17 tipos de actividades, dejando aquellos que no quedan claro en other.
 
-Para la columna year reemplazamos los unknown por 0.0 y se eliminan los ceros que tenian al final.
-
-Se comprueba que todos los tipos de datos de las distintas columnas son correctos, ademas los float se cambian a float32, los integer a int16 y los object a category para reducir su uso de memoria.
 
 Para finalizar se realizan una serie de cross tables para poder sacar conclusiones.
 Las conclusiones que observo son las siguientes:
